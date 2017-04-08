@@ -1,0 +1,14 @@
+Running this configuration you need some extra applications installed
+
+I am using Arch Linux.
+Between names and descirption, there are two kind lines like, - and --
+- means you can download by pacman -S
+-- means you can download by yaourt -S
+
+i3-config
+Edit what you don't need! like #statup area!
+
+i3 bar conky:
+alsa-utils - for Volume
+light-git -- for Display Brightness
+ttf-font-awesome -- fonts may need
