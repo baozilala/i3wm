@@ -12,6 +12,10 @@ dmenu - A menu for applications
 i3lock - Lokc your screen
 xorg-xkill - Force Kill applications
 scrot - Screeshot
+udiskie - Load USB
+feh - Wallpaper setup
+conky - I3 bar using conky, so you need it!
+noto-fonts - Google fonts used in my i3 config 
 
 i3 bar conky:
 alsa-utils - Volume Control
