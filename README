@@ -7,8 +7,13 @@ Between names and descirption, there are two kind lines like, - and --
 
 i3-config
 Edit what you don't need! like #statup area!
+xfce4-terminal - Default terminal
+dmenu - A menu for applications
+i3lock - Lokc your screen
+xorg-xkill - Force Kill applications
+scrot - Screeshot
 
 i3 bar conky:
-alsa-utils - for Volume
-light-git -- for Display Brightness
-ttf-font-awesome -- fonts may need
+alsa-utils - Volume Control
+light-git -- Display Brightness
+ttf-font-awesome -- Fonts may need
