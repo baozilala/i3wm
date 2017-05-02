@@ -49,7 +49,6 @@ TEXT
 
 # Check Cpu useage
   { "full_text" : "CPU ${cpu cpu0}%${acpitemp}°C","color":"\#99ccff"},
-  #{ "full_text" : ${if_match ${battery_percent}<=0}""${else}${battery_percent%}${endif}},
 
 # Show Volumes
   { "full_text" : " ${exec amixer get Master -M | grep -oE -m1 "[[:digit:]]*%"}","color":"\#fba8ff"},
@@ -58,7 +57,7 @@ TEXT
   { "full_text" : " ${exec light -G}","color":"\#c7fff2"},
 
 # Battery check
-  {"full_text": "  ${battery_percent}% ","color":"\#c3b3CC"},
+  ${if_match ${battery_percent}<90}{"full_text": "  ${battery_percent}% ","color":"\#c3b3CC"},
 
 # Show date and times
   { "full_text" : " ${time %Y-%m-%d} ${time %H:%M %a}","color":"\#00b300"}

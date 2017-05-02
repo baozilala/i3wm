@@ -8,9 +8,9 @@ set $mod Mod4
 font pango:Noto Sans 10
 
 # thin borders
-#hide_edge_borders both
+hide_edge_borders both
 # The same as new_window none
-new_window pixel 1
+new_window pixel 1 
 
 #---Toggle-Tiling-----------------------------------
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -166,8 +166,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # key-bindings
 bindsym $mod+Return exec xfce4-terminal # terminal
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # d3menu
-bindsym $mod+Shift+x exec i3lock --color 475263 # lock
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop #i3-dmenu-desktop # d3menu
 bindsym --release $mod+Shift+f exec xkill -button 1 # xorg-xkill force kill a program!
 bindsym --release Print exec scrot -s ~/Pictures/Screenshot/%Y-%m-%d-%T-screenshot.png # crot get a screen shot
 
@@ -194,6 +193,6 @@ bindsym $mod+Pause mode "$mode_system"
 
 # startup
 exec_always --no-startup-id udiskie #自动加载插入的u盘
-exec_always --no-startup-id feh --bg-scale /home/darkowl/Pictures/Wallpaperes/wallpaper.jpg #桌面
-exec --no-startup-id xrandr --dpi 144 # HIDPI monitor
-exec --no-startup-id fcitx # Shurufa
+exec_always --no-startup-id feh --bg-scale /home/darkowl/Pictures/Wallpaperes/78f0aaf2bd9fcb0a484d519fffaef3d4.jpg #桌面
+exec --no-startup-id telegram
+exec --no-startup-id nm-applet
