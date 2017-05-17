@@ -64,6 +64,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym Alt+Tab workspace next
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -164,7 +166,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
 # key-bindings
 bindsym $mod+Return exec xfce4-terminal # terminal
-bindsym $mod+d exec rofi -show drun #combi #i3-dmenu-desktop # d3menu
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # d3menu
 bindsym $mod+Shift+x exec i3lock --color 475263 # lock
 bindsym --release $mod+Shift+f exec xkill -button 1 # xorg-xkill force kill a program!
 bindsym --release Print exec scrot -s ~/Pictures/Screenshot/%Y-%m-%d-%T-screenshot.png # crot get a screen shot
@@ -196,4 +198,3 @@ exec_always --no-startup-id feh --bg-scale /home/darkowl/Pictures/Wallpaperes/wa
 exec_always --no-startup-id xrandr --dpi 144 # HIDPI monitor - disabled reason: i used xorg-xrdb, set Xft: 144 in ~/.Xresources 
 exec_always --no-startup-id fcitx # Shurufa
 exec_always --no-startup-id nm-applet
-#exec --no-startup-id compton -f

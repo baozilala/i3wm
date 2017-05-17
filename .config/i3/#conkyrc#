@@ -1,0 +1,65 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# 更新间隔
+update_interval 2.0
+
+# 永久执行
+total_run_times 0
+
+# 简介的单位描述(kiB->k, GiB->G, etc.). 默认是关闭的！
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 4
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXTq
+
+# JSON for i3baR
+ [
+# Check Internet
+  ${if_up wlp3s0}{"full_text" : "${wireless_essid wlp3s0} ↘${downspeed wlp3s0}/s ↗${upspeed wlp3s0}/s", "color" : "\#00d7ff"},
+  $else${if_up eth0}{"full_text": " ≈ eth0 ","color":"\#33CC99"},
+  $else{"full_text": " ≈ no connection ","color":"\#33CC99"},$endif$endif
+
+# Check HardDrive space for / and /home dir
+  { "full_text" : "H:${fs_free /home} R:${fs_free /}","color":"\#ff9966" },
+
+# Check how many ram has been used
+  { "full_text" : "RAM ${memperc}% $mem","color":
+	${if_match ${memperc}<90}"\#ff6699"${else}"\#ff0000"${endif}},
+
+# Check Cpu useage
+  { "full_text" : "CPU ${cpu cpu0}%${acpitemp}°C","color":"\#99ccff"},
+  #{ "full_text" : ${if_match ${battery_percent}<=0}""${else}${battery_percent%}${endif}},
+
+# Show Volumes
+  { "full_text" : " ${exec amixer get Master -M | grep -oE -m1 "[[:digit:]]*%"}","color":"\#fba8ff"},
+
+# Show Brightness
+  { "full_text" : " ${exec light -G}","color":"\#c7fff2"},
+
+# Battery check
+  {"full_text": "  ${battery_percent}% ","color":"\#c3b3CC"},
+
+# Show date and times
+  { "full_text" : " ${time %Y-%m-%d} ${time %H:%M %a}","color":"\#00b300"}
+],
