@@ -147,7 +147,7 @@ bar {
 	    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
 	    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
-	#position top
+	position top
 	#tray_output primary
 	status_command ~/.config/i3/conky-i3bar
 	#status_command i3status --config ~/.config/i3/i3status.conf
@@ -193,7 +193,8 @@ bindsym $mod+Pause mode "$mode_system"
 # startup
 #exec_always --no-startup-id udiskie # Load USB drive, i like mount manually so i canceled this one.
 exec_always --no-startup-id feh --bg-scale /home/darkowl/Pictures/Wallpaperes/wallpaper.jpg # Wallpaper
-exec_always --no-startup-id xrandr --dpi 144 # HIDPI monitor - disabled reason: i used xorg-xrdb, set Xft: 144 in ~/.Xresources 
+exec --no-startup-id xrandr --dpi 144 # HIDPI monitor - disabled reason: i used xorg-xrdb, set Xft: 144 in ~/.Xresources 
 exec_always --no-startup-id fcitx # Shurufa
 exec_always --no-startup-id nm-applet
-#exec --no-startup-id compton -f
+exec_always --no-startup-id compton -f
+exec_always --no-startup-id VBoxClient-all
